@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Profanity Filter Toy",
+  "version": "1.0.0",
+  "action": { "default_popup": "index.html" },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "src/service-worker.ts"
+  },
+  "permissions": ["storage"]
+}
