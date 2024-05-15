@@ -26,19 +26,6 @@ export function getHostname(url: string): Hostname {
   return parsed.hostname as Hostname;
 }
 
-const CHROME_STORAGE_KEY = 'profanity-settings';
-const INITIAL_VALUE = {
-  hostStats: {},
-  meta: {
-    installDate: new Date().getTime(),
-  },
-};
-
-export const useLocalChromeStore = createChromeStorageStateHookLocal(
-  CHROME_STORAGE_KEY,
-  INITIAL_VALUE
-);
-
 export const CHROME_STORAGE_HOSTS_KEY = 'profanity-hosts';
 const INITIAL_HOSTSTATS_VALUE: HostStats = {
   hosts: {},
