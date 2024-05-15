@@ -2,10 +2,20 @@
   "manifest_version": 3,
   "name": "Profanity Filter Toy",
   "version": "1.0.0",
-  "action": { "default_popup": "index.html" },
+  "action": { "default_popup": "index.html", "default_icon": "icon.png" },
   "options_page": "options.html",
   "background": {
     "service_worker": "src/service-worker.ts"
   },
-  "permissions": ["storage"]
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/content-script.ts"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "permissions": ["storage", "webNavigation", "scripting", "tabs", "activeTab"],
+  "host_permissions": ["http://*/*", "https://*/*"]
 }
